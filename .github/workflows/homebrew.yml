@@ -1,0 +1,93 @@
+name: Homebrew qualification
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install-and-test:
+    name: qrscan · ${{ matrix.runner }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            machine: arm64
+            target: aarch64-apple-darwin
+          - runner: macos-15-intel
+            machine: x86_64
+            target: x86_64-apple-darwin
+          - runner: ubuntu-24.04
+            machine: x86_64
+            target: x86_64-unknown-linux-gnu
+          - runner: ubuntu-24.04-arm
+            machine: aarch64
+            target: aarch64-unknown-linux-gnu
+    env:
+      HOMEBREW_NO_ANALYTICS: "1"
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      # This action checks out the exact workflow commit as a registered tap.
+      - name: Set up Homebrew and check out the tap
+        id: brew
+        uses: Homebrew/actions/setup-homebrew@c262868c096d909fc278daa87ed9772967331ea3 # 2026.11.02.1
+        with:
+          stable: true
+          brew-gh-api-token: ""
+
+      - name: Install, scan, and uninstall
+        shell: bash
+        env:
+          TAP_PATH: ${{ steps.brew.outputs.repository-path }}
+          TAP_NAME: ${{ steps.brew.outputs.tap-name }}
+          EXPECTED_MACHINE: ${{ matrix.machine }}
+          EXPECTED_TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          receipt="$RUNNER_TEMP/qrscan-receipt"
+          mkdir -p "$receipt"
+          test "$TAP_NAME" = "qrcode-ai-com/tap"
+          test "$(git -C "$TAP_PATH" rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(uname -m)" = "$EXPECTED_MACHINE"
+          {
+            printf 'commit=%s\ntarget=%s\n' "$GITHUB_SHA" "$EXPECTED_TARGET"
+            brew --version
+            uname -sm
+          } | tee "$receipt/host.txt"
+
+          formula="$TAP_NAME/qrscan"
+          brew info --formula --json=v2 "$formula" > "$receipt/formula.json"
+          jq -e --arg suffix "-$EXPECTED_TARGET.tar.gz" '
+            .formulae | length == 1 and
+            (.[0].urls.stable.url | endswith($suffix))
+          ' "$receipt/formula.json"
+          brew install --formula "$formula" 2>&1 | tee "$receipt/install.log"
+          brew test --verbose "$formula" 2>&1 | tee "$receipt/test.log"
+
+          prefix="$(brew --prefix "$formula")"
+          binary="$prefix/bin/qrscan"
+          "$binary" --version | tee "$receipt/version.txt"
+          file "$binary" | tee "$receipt/binary.txt"
+          for notice in LICENSE LICENSE-APACHE-2.0 LICENSING.md THIRD-PARTY.md \
+            THIRD-PARTY-LICENSES.txt COPYRIGHT-rust-std.html SOURCE.md build-info.json; do
+            test -s "$prefix/share/qrscan/$notice"
+          done
+          brew uninstall --formula "$formula" 2>&1 | tee "$receipt/uninstall.log"
+          test ! -e "$binary"
+          test ! -L "$(brew --prefix)/bin/qrscan"
+
+      - name: Retain installation and scan receipts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: qrscan-homebrew-${{ matrix.target }}
+          path: ${{ runner.temp }}/qrscan-receipt/
+          retention-days: 7
+          if-no-files-found: ignore
