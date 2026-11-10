@@ -1,6 +1,6 @@
 # QR Code & Barcode Scanner CLI for macOS and Linux
 
-`qrscan` is the Homebrew command-line scanner from [QR Code AI](https://qrcode-ai.com/).
+`qrscan` is the Homebrew command-line scanner from [QR Code AI](https://qrcode-ai.com/en-US/qr-code-scanner/cli).
 It detects QR codes and barcodes together in a local image and reports each
 format and decoded value as JSON.
 
@@ -13,9 +13,13 @@ qrscan ./label.png
 ```
 
 Use `qrscan ./label.png --pretty` for a terminal summary of the first detection.
-The default JSON report includes all detections. For browser workflows,
-see the planned [QR code scanner](https://qrcode-ai.com/en-US/qr-code-scanner)
-and [barcode scanner](https://qrcode-ai.com/en-US/barcode-scanner) pages.
+The default JSON report includes all detections.
+
+| | QR codes | Barcodes |
+| --- | --- | --- |
+| **Try the scanner live** | [QR code scanner](https://qrcode-ai.com/en-US/qr-code-scanner) | [Barcode scanner](https://qrcode-ai.com/en-US/barcode-scanner) |
+| **Command line guide** | [QR code scanner for the command line](https://qrcode-ai.com/en-US/qr-code-scanner/cli) | [Barcode scanner for the command line](https://qrcode-ai.com/en-US/barcode-scanner/cli) |
+| **Create a code** | [QR code generator](https://qrcode-ai.com/en-US/qr-code-generator) | [Barcode generator](https://qrcode-ai.com/en-US/barcode-generator) |
 
 ## Try a QR code and Code 128 in one image
 
