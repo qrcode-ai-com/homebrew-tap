@@ -86,3 +86,9 @@ contains the archives and checksums. The [matching source archive](https://githu
 is available under AGPL-3.0-or-later.
 
 Maintained by **Thibaut Mélen & Nicolas Cella** for **QR Code AI**, a product of **SuperNovae Studio**. Component licenses retain their own terms.
+
+## Source license
+
+This tap’s project-authored source and documentation use the [MIT License](LICENSE), with attribution to Thibaut Mélen & Nicolas Cella, QR Code AI and SuperNovae Studio. You may reuse and modify this source in commercial or proprietary projects while preserving the copyright and permission notice.
+
+The formula currently installs the immutable scanner 0.11.0 binaries, whose packaged AGPL-3.0-or-later license and third-party notices remain unchanged. The [scanner’s current MIT source](https://github.com/qrcode-ai-com/qrcode-barcode-scanner/blob/main/LICENSING.md) will reach installed binaries through a separately qualified and approved release. This tap source update does not publish a new engine version.
