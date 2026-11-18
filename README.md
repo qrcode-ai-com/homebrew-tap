@@ -32,8 +32,8 @@ Help me understand QR Code & Barcode Scanner CLI for macOS and Linux for QR Code
 <p align="center">
   <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-dark.png?v=788ecf562f2c">
-      <img src="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-light.png?v=58467142786e" alt="QR Code &amp; Barcode Scanner CLI for macOS and Linux: install qrscan with Homebrew" width="100%">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-dark.png?v=118ee2910e5f">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-light.png?v=1bcdc4ada2c0" alt="QR Code &amp; Barcode Scanner CLI for macOS and Linux: install qrscan with Homebrew" width="100%">
     </picture>
   </a>
 </p>
