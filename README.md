@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-dark.gif?v=815a4c986d02">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-light.gif?v=4c8ebd7c8e22" alt="QR Code &amp; Barcode Scanner CLI for macOS and Linux: the Homebrew logo, the brew install command in a terminal, and a QR code and a barcode being read" width="100%">
+    </picture>
+  </a>
+</p>
+
 # QR Code & Barcode Scanner CLI for macOS and Linux
 
 <!-- qrcode-ai-readme-actions:v2 -->
@@ -28,15 +37,6 @@ Help me understand QR Code & Barcode Scanner CLI for macOS and Linux for QR Code
 </details>
 
 <!-- /qrcode-ai-readme-actions:v2 -->
-
-<p align="center">
-  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-dark.gif?v=815a4c986d02">
-      <img src="https://raw.githubusercontent.com/qrcode-ai-com/homebrew-tap/main/assets/banner-light.gif?v=4c8ebd7c8e22" alt="QR Code &amp; Barcode Scanner CLI for macOS and Linux: the Homebrew logo, the brew install command in a terminal, and a QR code and a barcode being read" width="100%">
-    </picture>
-  </a>
-</p>
 
 Use this Homebrew tap to install qrscan on macOS or GNU/Linux without compiling the Rust engine. Choose the formula for the supported host, then scan a saved QR image or barcode label from a terminal. The default JSON report preserves every detection, while the human-readable summary serves a quick one-image check. Homebrew manages installation and removal; it does not add a web service or graphical scanner.
 
