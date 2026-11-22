@@ -48,6 +48,19 @@ To prepare a known input, create a QR image with the [QR code generator](https:/
 It detects QR codes and barcodes together in a local image and reports each
 format and decoded value as JSON.
 
+## How it works
+
+<!-- qrcode-ai-readme-media:v1 -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/how-cli-dark.gif?v=5b861170b5d2">
+    <img src="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/how-cli-light.gif?v=a700b1da82fb" alt="How qrscan works, in three steps: install qrscan, pass an image file, and read the JSON report" width="100%">
+  </picture>
+</p>
+<!-- /qrcode-ai-readme-media:v1 -->
+
+The picture shows the three steps: install qrscan, pass an image file and read the JSON report. The commands for this destination follow.
+
 ## Install and scan an image
 
 ```sh
