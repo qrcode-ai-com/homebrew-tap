@@ -132,7 +132,7 @@ The engine's [supported formats](https://github.com/qrcode-ai-com/qrcode-barcode
 
 Homebrew installs the checksum-pinned `v0.12.0` release binary on macOS and
 GNU/Linux, on arm64 and x86-64. The
-[qualification run](https://github.com/qrcode-ai-com/homebrew-tap/actions/runs/42210346618)
+[qualification run](https://github.com/qrcode-ai-com/homebrew-tap/actions/runs/45157560175)
 installed the formula, verified both mixed-image payloads in `fast`, `frame`,
 and `full`, and uninstalled it on all four hosts. Run the installed formula's
 test with `brew test qrcode-ai-com/tap/qrscan`.
