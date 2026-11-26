@@ -1,35 +1,35 @@
 class Qrscan < Formula
   desc "Read QR codes and barcodes from local images"
   homepage "https://qrcode-ai.com/"
-  version "0.12.0"
+  version "0.12.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.0/qrcode-barcode-scanner-cli-0.12.0-aarch64-apple-darwin.tar.gz"
-      sha256 "b241f7bc982079971de99213dea2c06a7a7e5d5eac60d3a6d20faf2719a9a2d5"
+      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.1/qrcode-barcode-scanner-cli-0.12.1-aarch64-apple-darwin.tar.gz"
+      sha256 "8d9608bcd7680c1e6a40625c2764b66fc2922e3da92b5dabc21d4238bb145af0"
     end
 
     on_intel do
-      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.0/qrcode-barcode-scanner-cli-0.12.0-x86_64-apple-darwin.tar.gz"
-      sha256 "d55212871b5f08eb039c6c82280287e833b7662c3ec5227d4357f623014b8a74"
+      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.1/qrcode-barcode-scanner-cli-0.12.1-x86_64-apple-darwin.tar.gz"
+      sha256 "b8fbd821aae6a0969940aab169befd525755fe834018ced8969328629097fe80"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.0/qrcode-barcode-scanner-cli-0.12.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "17512dea779823b0ab26e1556966c9ac6d8be0d544a99dbbb43edc4b47d57d6a"
+      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.1/qrcode-barcode-scanner-cli-0.12.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ba2af3b5304b0756ba172d38ce9f839fc3b668c38d4a7ab49b719e5f0cfd5789"
     end
 
     on_intel do
-      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.0/qrcode-barcode-scanner-cli-0.12.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1e6aea17507d22b13a370de3531697264dc748f34a1039425e892c3ee008217c"
+      url "https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/releases/download/v0.12.1/qrcode-barcode-scanner-cli-0.12.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "5e99d584447b03eef3818e14034c12ad09c88f31f8535b5929b0b846203a0665"
     end
   end
 
   resource "mixed-scan-fixture" do
-    url "https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/897dd50cdf27cbde54d408bf65e1ca4622035d42/fixtures/symbology/mixed-code128-qr.png"
+    url "https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/5b2c580c78b0693e58909f889b66f24fc1c548b1/fixtures/symbology/mixed-code128-qr.png"
     sha256 "c636e8d56df483ff1ec06dbe9b5bcba226c579f8fc1c3d10c4ccf4e100762ec8"
   end
 
